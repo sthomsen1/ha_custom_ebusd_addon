@@ -1,0 +1,97 @@
+configuration:
+  device:
+    name: USB Gerät
+    description: Verwenden Sie diese Option für USB eBUSd Adapter
+  latency:
+    name: "Latenz in MSEC (Standard: 0 für USB, 10 für IP)"
+    description: ebusd --latency=MSEC Übertragungslatenz in ms [0 für USB, 10 für IP]
+  readonly:
+    name: "Nur Lesen (Standard: aus)"
+    description: Nur vom Gerät lesen, niemals darauf schreiben
+  configpath:
+    name: Konfigurationspfad (/config/...)
+    description: Lesen Sie CSV-Konfigurationsdateien aus einem benutzerdefinierten Pfad. Sie können eine lokale Kopie von https://github.com/john30/ebusd-configuration in Ihrem "/config"-Ordner erstellen und den configpath auf z.B. "/config/ebusd-configuration/latest/de" ändern [http://ebusd.eu/config/]
+  scanconfig:
+    name: "Konfiguration scannen (Standard: an)"
+    description: Wählen Sie CSV-Konfigurationsdateien, die dem initialen Scan entsprechen (ADDR="none" oder leer für keine anfängliche Scan-Nachricht, "full" für vollständigen Scan oder eine einzelne Hex-Adresse zum Scannen, Standard ist das Senden einer Broadcast-Ident-Nachricht).
+  mqttjson:
+    name: "MQTT JSON (Standard: an)"
+    description: Im JSON-Format statt als Zeichenketten veröffentlichen
+  mqttlog:
+    name: "MQTT Log (Standard: aus)"
+    description: MQTT-Events protokollieren
+  mqttretain:
+    name: "MQTT Beibehalten (Standard: aus)"
+    description: Alle MQTT-Nachrichten mit Retain-Flag senden
+  commandline_options:
+    name: Benutzerdefinierte Befehlszeilenoptionen
+    description: Fügen Sie zusätzliche Befehlszeilenoptionen hinzu. Siehe eBUSd Wiki für alle verfügbaren Optionen https://github.com/john30/ebusd/wiki/2.-Run
+  http:
+    name: "HTTP-Zugang aktivieren (Standard: aus)"
+    description: HTTP-Client-Zugang aktivieren
+  accesslevel:
+    name: Zugriffsebene
+    description: Standard-Zugriffsebenen festlegen (z.B. "*" für alles)
+  logdir_name:
+    name: Verzeichnis für Logrotation
+    description: Verzeichnis, in dem die Log-Ausgabe über s6-log gespeichert wird (z.B. /config/ebusd-logs)
+  logdir_files_number:
+    name: Maximale Anzahl der Logrotationsdateien
+    description: Maximale Anzahl der rotierenden Logdateien im Logrotationsverzeichnis. Standard: 5
+  logdir_files_size:
+    name: Maximale Logrotationsdateigröße
+    description: Maximale Größe der rotierenden Logdatei im Logrotationsverzeichnis. Pro Datei, in Bytes. Standard: 1000000
+  loglevel_all:
+    name: "Loglevel für alle Nachrichten (Standard: notice)"
+    description: Loglevel für alle Nachrichten festlegen.
+  loglevel_network:
+    name: Loglevel für Netzwerknachrichten
+    description: Loglevel für alle Nachrichten festlegen.
+  loglevel_update:
+    name: Loglevel für Aktualisierungsnachrichten
+    description: Loglevel für Aktualisierungsnachrichten festlegen.
+  loglevel_bus:
+    name: Loglevel für Busnachrichten
+    description: Loglevel für Busnachrichten festlegen.
+  loglevel_main:
+    name: Loglevel für Hauptnachrichten
+    description: Loglevel für Hauptnachrichten festlegen
+  loglevel_other:
+    name: Loglevel für andere Nachrichten (einschließlich MQTT)
+    description: Loglevel für andere Nachrichten festlegen
+  network_device:
+    name: Netzwerkadapteradresse, z.B. enh:192.168.0.7:9999
+    description: Verwenden Sie diese Option für Netzwerk eBUSd Adapter ("enh:IP:PORT" für erweitertes Gerät oder "[udp:]IP:PORT" für Netzwerkgerät)
+  mqtthost:
+    name: "MQTT-Host (Standard: leer für Autokonfiguration)"
+    description: Automatisch konfigurierten MQTT-Host überschreiben
+  mqttport:
+    name: "MQTT-Server-Port (Standard: leer für Autokonfiguration)"
+    description: Automatisch konfigurierten MQTT-Port überschreiben, 0 zum Deaktivieren
+  mqttuser:
+    name: "MQTT-Benutzername (Standard: leer für Autokonfiguration)"
+    description: Automatisch konfigurierten MQTT-Benutzernamen überschreiben
+  mqttpass:
+    name: "MQTT-Passwort (Standard: leer für Autokonfiguration)"
+    description: Automatisch konfiguriertes MQTT-Passwort überschreiben
+  mqttint:
+    name: "MQTT-Integrationskonfigurationsdatei (Standard: /etc/ebusd/mqtt-hassio.cfg)"
+    description: MQTT-Integrationskonfigurationsdatei
+  pollinterval:
+    name: "Daten alle Sekunden abfragen (Standard: 5)"
+    description: Daten alle SEC Sekunden abfragen (0=deaktivieren)
+  mqttvar:
+    name: Variable(n) zu den gelesenen MQTT-Integrationseinstellungen hinzufügen.
+    description: Variable(n) zu den gelesenen MQTT-Integrationseinstellungen hinzufügen.
+  mqtttopic:
+    name: "MQTT-Topic (Standard: ebusd)"
+    description: MQTT-Topic
+  lograwdata:
+    name: "Protokollierung von Rohdaten aktivieren"
+    description: Nachrichten oder alle empfangenen/gesendeten Bytes auf dem Bus protokollieren
+  lograwdatafile:
+    name: "Rohprotokollierungsdatei (z.B. /config/ebusd/raw.log)"
+    description: Rohprotokoll in benutzerdefinierte Datei schreiben
+  lograwdatasize:
+    name: "Maximale Rohprotokollierungsdateigröße (Standard: 100)"
+    description: Rohprotokolldatei nicht größer als SIZE kB machen
