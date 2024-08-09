@@ -1,5 +1,7 @@
 # Home Assistant Add-on: ebusd
 
+Clone to /addons/ folder and update Add-On Package. Install Local-Addon ebusd
+
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports armhf Architecture][armhf-shield]
