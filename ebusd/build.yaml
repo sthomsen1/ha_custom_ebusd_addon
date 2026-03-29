@@ -1,5 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 build_from:
+  aarch64: "john30/ebusd:v26.1"
   arm64: "john30/ebusd:v26.1"
   amd64: "john30/ebusd:v26.1"
 labels:
